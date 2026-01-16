@@ -1,0 +1,1604 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>《渊海子平》长生规律命理系统</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #1a1a2e;
+            --secondary-color: #16213e;
+            --accent-color: #0f4c75;
+            --accent-light: #3282b8;
+            --gold-color: #ffd700;
+            --wood-color: #4CAF50;
+            --fire-color: #FF5722;
+            --earth-color: #795548;
+            --metal-color: #607D8B;
+            --water-color: #2196F3;
+            --text-color: #e6e6e6;
+            --text-secondary: #b0b0b0;
+            --bg-dark: #0f0f1a;
+            --bg-card: #1a1a2e;
+            --border-color: #2d4059;
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            --longevity-bg: rgba(15, 76, 117, 0.2);
+            --bath-bg: rgba(50, 130, 184, 0.2);
+            --crown-bg: rgba(255, 215, 0, 0.2);
+            --official-bg: rgba(76, 175, 80, 0.2);
+            --prosperity-bg: rgba(255, 87, 34, 0.2);
+            --decline-bg: rgba(121, 85, 72, 0.2);
+            --illness-bg: rgba(96, 125, 139, 0.2);
+            --death-bg: rgba(33, 150, 243, 0.2);
+            --tomb-bg: rgba(255, 0, 0, 0.2);
+            --fetus-bg: rgba(255, 182, 193, 0.2);
+            --nurture-bg: rgba(186, 85, 211, 0.2);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Microsoft YaHei', 'SimSun', 'STKaiti', serif;
+        }
+        
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-color);
+            line-height: 1.7;
+            min-height: 100vh;
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(15, 76, 117, 0.1) 0%, transparent 25%),
+                radial-gradient(circle at 90% 80%, rgba(50, 130, 184, 0.1) 0%, transparent 25%);
+            padding-bottom: 50px;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* 头部 */
+        .header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            padding: 30px 0;
+            text-align: center;
+            border-bottom: 3px solid var(--accent-color);
+            box-shadow: var(--shadow);
+            margin-bottom: 40px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header::before {
+            content: '长生 沐浴 冠带 临官 帝旺 衰 病 死 墓 绝 胎 养';
+            position: absolute;
+            top: 10px;
+            left: 0;
+            right: 0;
+            font-size: 1rem;
+            color: rgba(255, 215, 0, 0.3);
+            letter-spacing: 8px;
+        }
+        
+        .header h1 {
+            font-size: 2.8rem;
+            color: var(--gold-color);
+            text-shadow: 0 0 15px rgba(255, 215, 0, 0.3);
+            margin-bottom: 10px;
+            letter-spacing: 6px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .header .subtitle {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            font-style: italic;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .header .author {
+            font-size: 1rem;
+            color: var(--accent-light);
+            margin-top: 10px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        /* 主要内容区域 */
+        .main-content {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 30px;
+        }
+        
+        @media (max-width: 1200px) {
+            .main-content {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        /* 输入面板 */
+        .input-panel {
+            background-color: var(--bg-card);
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border-color);
+            position: sticky;
+            top: 20px;
+        }
+        
+        .panel-title {
+            font-size: 1.8rem;
+            color: var(--gold-color);
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid var(--accent-color);
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .panel-title i {
+            font-size: 1.6rem;
+        }
+        
+        .input-group {
+            margin-bottom: 25px;
+        }
+        
+        .input-group label {
+            display: block;
+            margin-bottom: 10px;
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+        }
+        
+        .input-group input, .input-group select {
+            width: 100%;
+            padding: 15px;
+            background-color: rgba(255, 255, 255, 0.08);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            color: var(--text-color);
+            font-size: 1.1rem;
+            transition: all 0.3s;
+        }
+        
+        .input-group input:focus, .input-group select:focus {
+            outline: none;
+            border-color: var(--accent-light);
+            box-shadow: 0 0 10px rgba(50, 130, 184, 0.3);
+        }
+        
+        .gender-selection {
+            display: flex;
+            gap: 15px;
+            margin-top: 10px;
+        }
+        
+        .gender-option {
+            flex: 1;
+            text-align: center;
+            padding: 15px;
+            background-color: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s;
+            border: 2px solid transparent;
+        }
+        
+        .gender-option:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+        
+        .gender-option.selected {
+            border-color: var(--accent-light);
+            background-color: rgba(50, 130, 184, 0.15);
+        }
+        
+        .gender-option i {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+            display: block;
+        }
+        
+        .calculate-btn {
+            width: 100%;
+            padding: 18px;
+            background: linear-gradient(135deg, var(--accent-color), var(--accent-light));
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.3rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+            margin-top: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+        
+        .calculate-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(15, 76, 117, 0.4);
+        }
+        
+        /* 结果面板 */
+        .result-panel {
+            background-color: var(--bg-card);
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border-color);
+        }
+        
+        .result-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid var(--border-color);
+        }
+        
+        .result-title {
+            font-size: 2rem;
+            color: var(--gold-color);
+        }
+        
+        .result-subtitle {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+        }
+        
+        .result-content {
+            display: none;
+        }
+        
+        .result-content.active {
+            display: block;
+            animation: fadeIn 0.8s ease;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        /* 八字命盘 */
+        .bazi-section {
+            background-color: rgba(0, 0, 0, 0.2);
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 40px;
+            border: 1px solid var(--border-color);
+        }
+        
+        .section-title {
+            font-size: 1.8rem;
+            color: var(--gold-color);
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .section-title i {
+            color: var(--accent-light);
+        }
+        
+        .bazi-display {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            margin-bottom: 25px;
+        }
+        
+        @media (max-width: 768px) {
+            .bazi-display {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        .bazi-column {
+            text-align: center;
+            padding: 25px 15px;
+            background-color: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            transition: transform 0.3s;
+        }
+        
+        .bazi-column:hover {
+            transform: translateY(-5px);
+        }
+        
+        .bazi-label {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            margin-bottom: 15px;
+        }
+        
+        .bazi-value {
+            font-size: 2.2rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .bazi-element {
+            font-size: 1.1rem;
+            padding: 8px 15px;
+            border-radius: 20px;
+            display: inline-block;
+            margin-top: 10px;
+        }
+        
+        .element-wood { background-color: var(--wood-color); color: white; }
+        .element-fire { background-color: var(--fire-color); color: white; }
+        .element-earth { background-color: var(--earth-color); color: white; }
+        .element-metal { background-color: var(--metal-color); color: white; }
+        .element-water { background-color: var(--water-color); color: white; }
+        
+        /* 十二长生宫 */
+        .longevity-section {
+            margin-bottom: 40px;
+        }
+        
+        .longevity-intro {
+            background-color: rgba(15, 76, 117, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            border-left: 4px solid var(--accent-light);
+        }
+        
+        .longevity-grid {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        @media (max-width: 992px) {
+            .longevity-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .longevity-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .longevity-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        .longevity-card {
+            border-radius: 10px;
+            padding: 20px 15px;
+            text-align: center;
+            transition: all 0.3s;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .longevity-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+        }
+        
+        .longevity-card.active {
+            transform: scale(1.05);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+        
+        .longevity-card.longevity { background-color: var(--longevity-bg); }
+        .longevity-card.bath { background-color: var(--bath-bg); }
+        .longevity-card.crown { background-color: var(--crown-bg); }
+        .longevity-card.official { background-color: var(--official-bg); }
+        .longevity-card.prosperity { background-color: var(--prosperity-bg); }
+        .longevity-card.decline { background-color: var(--decline-bg); }
+        .longevity-card.illness { background-color: var(--illness-bg); }
+        .longevity-card.death { background-color: var(--death-bg); }
+        .longevity-card.tomb { background-color: var(--tomb-bg); }
+        .longevity-card.absolute { background-color: rgba(255, 0, 0, 0.2); }
+        .longevity-card.fetus { background-color: var(--fetus-bg); }
+        .longevity-card.nurture { background-color: var(--nurture-bg); }
+        
+        .longevity-name {
+            font-size: 1.4rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        
+        .longevity-dizhi {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: var(--text-secondary);
+        }
+        
+        .longevity-description {
+            font-size: 0.9rem;
+            opacity: 0.9;
+            line-height: 1.5;
+        }
+        
+        /* 长生规律详解 */
+        .longevity-detail {
+            background-color: rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            padding: 25px;
+            margin-top: 30px;
+            border: 1px solid var(--border-color);
+            display: none;
+        }
+        
+        .longevity-detail.active {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+        
+        .detail-title {
+            font-size: 1.6rem;
+            color: var(--gold-color);
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .detail-content p {
+            margin-bottom: 15px;
+            line-height: 1.8;
+        }
+        
+        .highlight {
+            color: var(--gold-color);
+            font-weight: bold;
+        }
+        
+        .warning {
+            color: #ff6b6b;
+            font-weight: bold;
+        }
+        
+        .good {
+            color: #4CAF50;
+            font-weight: bold;
+        }
+        
+        /* 日主分析 */
+        .rizhu-analysis {
+            background-color: rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            padding: 25px;
+            margin-bottom: 30px;
+            border: 1px solid var(--border-color);
+        }
+        
+        .analysis-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        @media (max-width: 768px) {
+            .analysis-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .analysis-item {
+            background-color: rgba(255, 255, 255, 0.05);
+            padding: 20px;
+            border-radius: 8px;
+        }
+        
+        .analysis-item-title {
+            font-size: 1.3rem;
+            color: var(--accent-light);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        /* 大运排盘 */
+        .dayun-section {
+            margin-bottom: 40px;
+        }
+        
+        .dayun-table-container {
+            overflow-x: auto;
+            margin-top: 20px;
+        }
+        
+        .dayun-table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 800px;
+        }
+        
+        .dayun-table th, .dayun-table td {
+            padding: 15px;
+            text-align: center;
+            border: 1px solid var(--border-color);
+        }
+        
+        .dayun-table th {
+            background-color: rgba(15, 76, 117, 0.3);
+            color: var(--gold-color);
+            font-weight: bold;
+        }
+        
+        .dayun-table tr:nth-child(even) {
+            background-color: rgba(255, 255, 255, 0.03);
+        }
+        
+        .dayun-table tr:hover {
+            background-color: rgba(255, 255, 255, 0.05);
+        }
+        
+        .longevity-badge {
+            padding: 5px 10px;
+            border-radius: 15px;
+            font-size: 0.9rem;
+            display: inline-block;
+            margin: 2px;
+        }
+        
+        /* 初始状态 */
+        .initial-state {
+            text-align: center;
+            padding: 60px 20px;
+        }
+        
+        .initial-icon {
+            font-size: 5rem;
+            color: var(--accent-light);
+            margin-bottom: 30px;
+            opacity: 0.5;
+        }
+        
+        .initial-text {
+            font-size: 1.3rem;
+            color: var(--text-secondary);
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+        
+        .initial-quote {
+            font-style: italic;
+            margin-top: 30px;
+            padding: 20px;
+            border-left: 4px solid var(--accent-light);
+            background-color: rgba(15, 76, 117, 0.1);
+            border-radius: 0 8px 8px 0;
+        }
+        
+        /* 控制按钮 */
+        .controls {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .control-btn {
+            flex: 1;
+            padding: 15px;
+            background-color: rgba(255, 255, 255, 0.08);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            color: var(--text-color);
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+        
+        .control-btn:hover {
+            background-color: rgba(255, 255, 255, 0.12);
+        }
+        
+        .control-btn.print {
+            background-color: rgba(15, 76, 117, 0.3);
+        }
+        
+        .control-btn.print:hover {
+            background-color: rgba(15, 76, 117, 0.4);
+        }
+        
+        /* 页脚 */
+        .footer {
+            text-align: center;
+            margin-top: 50px;
+            padding-top: 30px;
+            border-top: 1px solid var(--border-color);
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+        
+        .footer a {
+            color: var(--accent-light);
+            text-decoration: none;
+        }
+        
+        .footer a:hover {
+            text-decoration: underline;
+        }
+        
+        /* 响应式调整 */
+        @media (max-width: 576px) {
+            .header h1 {
+                font-size: 2rem;
+                letter-spacing: 3px;
+            }
+            
+            .panel-title, .section-title {
+                font-size: 1.5rem;
+            }
+            
+            .bazi-value {
+                font-size: 1.8rem;
+            }
+            
+            .input-panel {
+                padding: 20px;
+            }
+            
+            .result-panel {
+                padding: 20px;
+            }
+        }
+        
+        /* 滚动条样式 */
+        ::-webkit-scrollbar {
+            width: 10px;
+            height: 10px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 5px;
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: var(--accent-light);
+            border-radius: 5px;
+        }
+        
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--accent-color);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- 头部 -->
+        <header class="header">
+            <h1>《渊海子平》长生规律系统</h1>
+            <div class="subtitle">宋代徐子平著 · 子平命学之宗 · 十二长生宫命理精华</div>
+            <div class="author">—— 以日主为中心，观五行在十二宫之旺衰生死 ——</div>
+        </header>
+        
+        <!-- 主要内容 -->
+        <div class="main-content">
+            <!-- 输入面板 -->
+            <div class="input-panel">
+                <h2 class="panel-title"><i class="fas fa-user-circle"></i> 个人信息</h2>
+                
+                <div class="input-group">
+                    <label for="name"><i class="fas fa-signature"></i> 姓名（可选）</label>
+                    <input type="text" id="name" placeholder="请输入姓名，如：张三">
+                </div>
+                
+                <div class="input-group">
+                    <label for="birthDate"><i class="fas fa-calendar-alt"></i> 出生日期</label>
+                    <input type="date" id="birthDate">
+                </div>
+                
+                <div class="input-group">
+                    <label for="birthTime"><i class="fas fa-clock"></i> 出生时间</label>
+                    <select id="birthTime">
+                        <option value="23-1">子时 (23:00-01:00)</option>
+                        <option value="1-3">丑时 (01:00-03:00)</option>
+                        <option value="3-5">寅时 (03:00-05:00)</option>
+                        <option value="5-7">卯时 (05:00-07:00)</option>
+                        <option value="7-9">辰时 (07:00-09:00)</option>
+                        <option value="9-11">巳时 (09:00-11:00)</option>
+                        <option value="11-13" selected>午时 (11:00-13:00)</option>
+                        <option value="13-15">未时 (13:00-15:00)</option>
+                        <option value="15-17">申时 (15:00-17:00)</option>
+                        <option value="17-19">酉时 (17:00-19:00)</option>
+                        <option value="19-21">戌时 (19:00-21:00)</option>
+                        <option value="21-23">亥时 (21:00-23:00)</option>
+                    </select>
+                </div>
+                
+                <div class="input-group">
+                    <label><i class="fas fa-venus-mars"></i> 性别</label>
+                    <div class="gender-selection">
+                        <div class="gender-option selected" data-gender="male">
+                            <i class="fas fa-mars"></i>
+                            <div>男性</div>
+                        </div>
+                        <div class="gender-option" data-gender="female">
+                            <i class="fas fa-venus"></i>
+                            <div>女性</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <button class="calculate-btn" id="calculateBtn">
+                    <i class="fas fa-calculator"></i> 开始命理推算
+                </button>
+                
+                <div style="margin-top: 30px; padding: 20px; background-color: rgba(15, 76, 117, 0.1); border-radius: 8px;">
+                    <h4 style="color: var(--accent-light); margin-bottom: 10px; display: flex; align-items: center; gap: 10px;">
+                        <i class="fas fa-info-circle"></i> 《渊海子平》长生规律
+                    </h4>
+                    <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.6;">
+                        十二长生宫：长生、沐浴、冠带、临官、帝旺、衰、病、死、墓、绝、胎、养。
+                        以日干对照四柱地支，观五行之旺衰生死，乃《渊海子平》核心要义。
+                    </p>
+                </div>
+            </div>
+            
+            <!-- 结果面板 -->
+            <div class="result-panel">
+                <div class="result-header">
+                    <div>
+                        <h2 class="result-title" id="resultName">长生规律命理分析</h2>
+                        <div class="result-subtitle" id="resultSubtitle">请输入生辰信息进行推算</div>
+                    </div>
+                    <div class="controls" id="controlButtons" style="display: none;">
+                        <button class="control-btn print" id="printBtn">
+                            <i class="fas fa-print"></i> 打印
+                        </button>
+                        <button class="control-btn" id="resetBtn">
+                            <i class="fas fa-redo"></i> 重置
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- 初始状态 -->
+                <div class="initial-state" id="initialState">
+                    <div class="initial-icon">
+                        <i class="fas fa-yin-yang"></i>
+                    </div>
+                    <div class="initial-text">
+                        《渊海子平》是宋代徐子平所著的命理学经典，为四柱八字命理学的奠基之作。
+                        本系统根据其核心理论——"十二长生规律"，通过您的生辰八字，分析日主在十二宫位的旺衰状态，
+                        揭示命理格局与运势变化。
+                    </div>
+                    <div class="initial-quote">
+                        "推命之要，首重日干。观其旺衰，察其生死，审其进退，明其休咎。" 
+                        <div style="text-align: right; margin-top: 10px;">——《渊海子平》</div>
+                    </div>
+                </div>
+                
+                <!-- 结果内容 -->
+                <div class="result-content" id="resultContent">
+                    <!-- 八字命盘 -->
+                    <div class="bazi-section">
+                        <h3 class="section-title"><i class="fas fa-star-and-crescent"></i> 八字命盘</h3>
+                        <div class="bazi-display" id="baziDisplay">
+                            <!-- 八字内容将通过JavaScript动态生成 -->
+                        </div>
+                        <div style="text-align: center; color: var(--text-secondary);">
+                            <i class="fas fa-info-circle"></i> 日柱天干为<span id="rizhuDisplay">甲</span>，是分析十二长生规律的核心
+                        </div>
+                    </div>
+                    
+                    <!-- 日主分析 -->
+                    <div class="rizhu-analysis">
+                        <h3 class="section-title"><i class="fas fa-user"></i> 日主分析</h3>
+                        <div class="analysis-grid" id="rizhuAnalysis">
+                            <!-- 日主分析内容将通过JavaScript动态生成 -->
+                        </div>
+                    </div>
+                    
+                    <!-- 十二长生宫 -->
+                    <div class="longevity-section">
+                        <h3 class="section-title"><i class="fas fa-infinity"></i> 十二长生宫</h3>
+                        
+                        <div class="longevity-intro">
+                            <p>《渊海子平》云："五行寄生十二宫，长生、沐浴、冠带、临官、帝旺、衰、病、死、墓、绝、胎、养，周而复始。"</p>
+                            <p>日主<span id="rizhuForLongevity">甲</span>在各地支的旺衰状态如下：</p>
+                        </div>
+                        
+                        <div class="longevity-grid" id="longevityGrid">
+                            <!-- 十二长生宫内容将通过JavaScript动态生成 -->
+                        </div>
+                        
+                        <!-- 长生宫详情 -->
+                        <div class="longevity-detail" id="longevityDetail">
+                            <h4 class="detail-title" id="detailTitle">长生宫详解</h4>
+                            <div class="detail-content" id="detailContent">
+                                <!-- 详情内容将通过JavaScript动态生成 -->
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 大运排盘 -->
+                    <div class="dayun-section">
+                        <h3 class="section-title"><i class="fas fa-hourglass-half"></i> 大运排盘</h3>
+                        <p>根据性别和出生时间推算人生大运，每十年一转运：</p>
+                        
+                        <div class="dayun-table-container">
+                            <table class="dayun-table" id="dayunTable">
+                                <!-- 大运表格内容将通过JavaScript动态生成 -->
+                            </table>
+                        </div>
+                        
+                        <div style="margin-top: 20px; padding: 15px; background-color: rgba(255, 215, 0, 0.1); border-radius: 8px;">
+                            <p><i class="fas fa-lightbulb"></i> 《渊海子平》论大运："大运者，人生之传舍也。十年一易，吉凶悔吝生焉。"</p>
+                        </div>
+                    </div>
+                    
+                    <!-- 命理建议 -->
+                    <div style="margin-top: 40px; padding: 25px; background-color: rgba(15, 76, 117, 0.15); border-radius: 10px; border-left: 4px solid var(--accent-light);">
+                        <h3 style="color: var(--accent-light); margin-bottom: 15px; display: flex; align-items: center; gap: 10px;">
+                            <i class="fas fa-hand-holding-heart"></i> 命理建议
+                        </h3>
+                        <div id="adviceContent">
+                            <!-- 建议内容将通过JavaScript动态生成 -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 页脚 -->
+        <footer class="footer">
+            <p>本系统基于《渊海子平》命理原理开发，仅供传统文化研究与参考</p>
+            <p>© 2023 渊海子平长生规律系统 | 命理玄学，仅供研究探讨</p>
+            <p style="margin-top: 10px; font-size: 0.8rem;">
+                长生规律算法依据：甲木长生在亥，丙戊长生在寅，庚金长生在巳，壬水长生在申；<br>
+                乙木长生在午，丁己长生在酉，辛金长生在子，癸水长生在卯。
+            </p>
+        </footer>
+    </div>
+
+    <script>
+        // 全局变量
+        let currentGender = 'male';
+        let currentRizhu = '甲'; // 日主天干
+        let currentLongevityData = null;
+        
+        // 页面加载完成后执行
+        document.addEventListener('DOMContentLoaded', function() {
+            // 设置默认出生日期为30年前
+            const defaultDate = new Date();
+            defaultDate.setFullYear(defaultDate.getFullYear() - 30);
+            const formattedDate = defaultDate.toISOString().split('T')[0];
+            document.getElementById('birthDate').value = formattedDate;
+            
+            // 性别选择
+            document.querySelectorAll('.gender-option').forEach(option => {
+                option.addEventListener('click', function() {
+                    document.querySelectorAll('.gender-option').forEach(opt => {
+                        opt.classList.remove('selected');
+                    });
+                    this.classList.add('selected');
+                    currentGender = this.getAttribute('data-gender');
+                });
+            });
+            
+            // 计算按钮
+            document.getElementById('calculateBtn').addEventListener('click', calculateMingli);
+            
+            // 打印按钮
+            document.getElementById('printBtn').addEventListener('click', function() {
+                window.print();
+            });
+            
+            // 重置按钮
+            document.getElementById('resetBtn').addEventListener('click', function() {
+                document.getElementById('initialState').style.display = 'block';
+                document.getElementById('resultContent').classList.remove('active');
+                document.getElementById('controlButtons').style.display = 'none';
+                document.getElementById('resultSubtitle').textContent = '请输入生辰信息进行推算';
+            });
+        });
+        
+        // 主要计算函数
+        function calculateMingli() {
+            // 获取输入值
+            const name = document.getElementById('name').value.trim();
+            const birthDate = document.getElementById('birthDate').value;
+            const birthTime = document.getElementById('birthTime').value;
+            
+            // 验证输入
+            if (!birthDate) {
+                alert('请输入出生日期');
+                return;
+            }
+            
+            // 显示加载状态
+            document.getElementById('initialState').style.display = 'none';
+            document.getElementById('resultContent').classList.add('active');
+            document.getElementById('controlButtons').style.display = 'flex';
+            
+            // 更新结果标题
+            const resultName = document.getElementById('resultName');
+            const resultSubtitle = document.getElementById('resultSubtitle');
+            
+            if (name) {
+                resultName.textContent = `${name} 的长生规律命理分析`;
+            } else {
+                resultName.textContent = '长生规律命理分析';
+            }
+            
+            // 解析日期和时间
+            const [year, month, day] = birthDate.split('-').map(Number);
+            const timeRange = birthTime.split('-');
+            const hour = parseInt(timeRange[0]);
+            
+            // 转换为日期对象
+            const solarDate = new Date(year, month - 1, day, hour);
+            
+            // 计算八字
+            const bazi = calculateBaziFromDate(solarDate);
+            currentRizhu = bazi.day.stem; // 保存日主
+            
+            // 更新八字显示
+            updateBaziDisplay(bazi, name, solarDate);
+            
+            // 更新日主分析
+            updateRizhuAnalysis(bazi);
+            
+            // 计算并显示十二长生宫
+            updateLongevityGrid(bazi);
+            
+            // 计算并显示大运排盘
+            updateDayunTable(bazi, solarDate);
+            
+            // 生成命理建议
+            generateAdvice(bazi);
+            
+            // 更新结果副标题
+            const dateStr = `${year}年${month}月${day}日 ${getShiChen(birthTime)}`;
+            resultSubtitle.textContent = `生辰：${dateStr} | 性别：${currentGender === 'male' ? '男' : '女'} | 日主：${bazi.day.stem}${bazi.day.element}`;
+        }
+        
+        // 获取时辰名称
+        function getShiChen(timeValue) {
+            const shiChenMap = {
+                '23-1': '子时', '1-3': '丑时', '3-5': '寅时', '5-7': '卯时',
+                '7-9': '辰时', '9-11': '巳时', '11-13': '午时', '13-15': '未时',
+                '15-17': '申时', '17-19': '酉时', '19-21': '戌时', '21-23': '亥时'
+            };
+            return shiChenMap[timeValue] || '未知时辰';
+        }
+        
+        // 计算八字
+        function calculateBaziFromDate(date) {
+            const year = date.getFullYear();
+            const month = date.getMonth() + 1;
+            const day = date.getDate();
+            const hour = date.getHours();
+            
+            // 天干地支表
+            const heavenlyStems = ['甲', '乙', '丙', '丁', '戊', '己', '庚', '辛', '壬', '癸'];
+            const earthlyBranches = ['子', '丑', '寅', '卯', '辰', '巳', '午', '未', '申', '酉', '戌', '亥'];
+            
+            // 年柱计算（简化，实际需考虑立春）
+            const yearStemIndex = (year - 4) % 10;
+            const yearBranchIndex = (year - 4) % 12;
+            
+            // 月柱计算（简化，实际需考虑节气）
+            const monthStemIndex = ((year % 10 + 2) * 2 + month) % 10;
+            const monthBranchIndex = (month + 1) % 12;
+            
+            // 日柱计算（简化公式）
+            const baseDate = new Date(1900, 0, 1);
+            const daysDiff = Math.floor((date - baseDate) / (1000 * 60 * 60 * 24));
+            const dayStemIndex = (daysDiff + 9) % 10;
+            const dayBranchIndex = (daysDiff + 1) % 12;
+            
+            // 时柱计算
+            const hourBranchIndex = Math.floor((hour + 1) / 2) % 12;
+            const hourStemIndex = (dayStemIndex * 2 + hourBranchIndex) % 10;
+            
+            // 获取五行
+            const yearElement = getElementFromStem(heavenlyStems[yearStemIndex]);
+            const monthElement = getElementFromStem(heavenlyStems[monthStemIndex]);
+            const dayElement = getElementFromStem(heavenlyStems[dayStemIndex]);
+            const hourElement = getElementFromStem(heavenlyStems[hourStemIndex]);
+            
+            return {
+                year: {
+                    stem: heavenlyStems[yearStemIndex],
+                    branch: earthlyBranches[yearBranchIndex],
+                    element: yearElement
+                },
+                month: {
+                    stem: heavenlyStems[monthStemIndex],
+                    branch: earthlyBranches[monthBranchIndex],
+                    element: monthElement
+                },
+                day: {
+                    stem: heavenlyStems[dayStemIndex],
+                    branch: earthlyBranches[dayBranchIndex],
+                    element: dayElement
+                },
+                hour: {
+                    stem: heavenlyStems[hourStemIndex],
+                    branch: earthlyBranches[hourBranchIndex],
+                    element: hourElement
+                }
+            };
+        }
+        
+        // 根据天干获取五行
+        function getElementFromStem(stem) {
+            const elementMap = {
+                '甲': '木', '乙': '木',
+                '丙': '火', '丁': '火',
+                '戊': '土', '己': '土',
+                '庚': '金', '辛': '金',
+                '壬': '水', '癸': '水'
+            };
+            return elementMap[stem] || '未知';
+        }
+        
+        // 更新八字显示
+        function updateBaziDisplay(bazi, name, date) {
+            const baziDisplay = document.getElementById('baziDisplay');
+            const rizhuDisplay = document.getElementById('rizhuDisplay');
+            const rizhuForLongevity = document.getElementById('rizhuForLongevity');
+            
+            // 显示日主
+            rizhuDisplay.textContent = bazi.day.stem;
+            rizhuForLongevity.textContent = bazi.day.stem;
+            
+            // 八字四柱
+            const columns = [
+                { label: '年柱', value: bazi.year.stem + bazi.year.branch, element: bazi.year.element },
+                { label: '月柱', value: bazi.month.stem + bazi.month.branch, element: bazi.month.element },
+                { label: '日柱', value: bazi.day.stem + bazi.day.branch, element: bazi.day.element },
+                { label: '时柱', value: bazi.hour.stem + bazi.hour.branch, element: bazi.hour.element }
+            ];
+            
+            // 清空并重新填充
+            baziDisplay.innerHTML = '';
+            
+            columns.forEach(col => {
+                const columnDiv = document.createElement('div');
+                columnDiv.className = 'bazi-column';
+                
+                columnDiv.innerHTML = `
+                    <div class="bazi-label">${col.label}</div>
+                    <div class="bazi-value">${col.value}</div>
+                    <div class="bazi-element element-${col.element}">${col.element}行</div>
+                `;
+                
+                baziDisplay.appendChild(columnDiv);
+            });
+        }
+        
+        // 更新日主分析
+        function updateRizhuAnalysis(bazi) {
+            const rizhuAnalysis = document.getElementById('rizhuAnalysis');
+            const dayStem = bazi.day.stem;
+            const dayElement = bazi.day.element;
+            
+            // 日干特性
+            const ganCharacteristics = {
+                '甲': '阳木，如参天大树，有领导才能，正直仁慈',
+                '乙': '阴木，如藤萝花草，温柔灵活，适应力强',
+                '丙': '阳火，如太阳之火，热情开朗，积极进取',
+                '丁': '阴火，如灯烛之火，细心周到，温和有礼',
+                '戊': '阳土，如高山厚土，诚实可靠，稳重务实',
+                '己': '阴土，如田园之土，包容宽厚，温和谦逊',
+                '庚': '阳金，如刀剑矿石，刚毅果决，讲义气',
+                '辛': '阴金，如珠宝首饰，细腻敏感，重感情',
+                '壬': '阳水，如江河湖海，聪明机智，适应力强',
+                '癸': '阴水，如雨露之水，温柔体贴，心思细腻'
+            };
+            
+            // 五行特性
+            const elementCharacteristics = {
+                '木': '主仁，性格正直，有恻隐之心，好华美，但有时固执',
+                '火': '主礼，性格谦让，有恭敬之心，好修饰，但有时急躁',
+                '土': '主信，性格忠厚，有信用之心，好忠孝，但有时愚钝',
+                '金': '主义，性格刚强，有羞恶之心，好名声，但有时尖刻',
+                '水': '主智，性格聪明，有是非之心，好技艺，但有时善变'
+            };
+            
+            // 日干旺衰（简化判断）
+            const monthBranch = bazi.month.branch;
+            const season = getSeasonFromBranch(monthBranch);
+            const strength = calculateElementStrength(dayElement, season);
+            
+            rizhuAnalysis.innerHTML = `
+                <div class="analysis-item">
+                    <div class="analysis-item-title">
+                        <i class="fas fa-tree"></i> 日干特性
+                    </div>
+                    <p>日主为<span class="highlight">${dayStem}${dayElement}</span>，${ganCharacteristics[dayStem]}。</p>
+                    <p>${elementCharacteristics[dayElement]}</p>
+                </div>
+                <div class="analysis-item">
+                    <div class="analysis-item-title">
+                        <i class="fas fa-chart-line"></i> 日主旺衰
+                    </div>
+                    <p>出生于${season}，${dayElement}行${strength.text}。</p>
+                    <p>旺衰状态：<span class="${strength.class}">${strength.level}</span></p>
+                    <p>${strength.advice}</p>
+                </div>
+            `;
+        }
+        
+        // 根据地支获取季节
+        function getSeasonFromBranch(branch) {
+            const seasonMap = {
+                '寅': '春季', '卯': '春季', '辰': '春季',
+                '巳': '夏季', '午': '夏季', '未': '夏季',
+                '申': '秋季', '酉': '秋季', '戌': '秋季',
+                '亥': '冬季', '子': '冬季', '丑': '冬季'
+            };
+            return seasonMap[branch] || '季末';
+        }
+        
+        // 计算五行旺衰
+        function calculateElementStrength(element, season) {
+            // 五行在四季的旺相休囚死
+            const strengthMap = {
+                '木': { '春季': '旺', '夏季': '休', '秋季': '死', '冬季': '相' },
+                '火': { '春季': '相', '夏季': '旺', '秋季': '囚', '冬季': '死' },
+                '土': { '春季': '死', '夏季': '相', '秋季': '休', '冬季': '囚' },
+                '金': { '春季': '囚', '夏季': '死', '秋季': '旺', '冬季': '休' },
+                '水': { '春季': '休', '夏季': '囚', '秋季': '相', '冬季': '旺' }
+            };
+            
+            const state = strengthMap[element]?.[season] || '平';
+            
+            const result = {
+                '旺': { level: '旺相', text: '得令而旺', class: 'good', advice: '日主强旺，能任财官，宜克泄不宜生扶。' },
+                '相': { level: '次旺', text: '得生而相', class: 'good', advice: '日主次旺，有一定力量，可任一般财官。' },
+                '休': { level: '休囚', text: '失令而休', class: 'warning', advice: '日主偏弱，宜生扶不宜克泄。' },
+                '囚': { level: '受困', text: '受克而囚', class: 'warning', advice: '日主较弱，急需生扶，忌见克泄。' },
+                '死': { level: '死绝', text: '无气而死', class: 'warning', advice: '日主极弱，急需生扶，最忌克泄。' }
+            };
+            
+            return result[state] || { level: '平', text: '中和', class: '', advice: '日主中和，五行平衡为佳。' };
+        }
+        
+        // 更新十二长生宫
+        function updateLongevityGrid(bazi) {
+            const longevityGrid = document.getElementById('longevityGrid');
+            const dayStem = bazi.day.stem;
+            
+            // 十二长生宫数据
+            const longevityData = calculateLongevity(dayStem);
+            currentLongevityData = longevityData; // 保存数据供详情使用
+            
+            // 清空网格
+            longevityGrid.innerHTML = '';
+            
+            // 长生宫名称和描述
+            const longevityInfo = [
+                { name: '长生', class: 'longevity', desc: '万物发生向荣，如人之初生' },
+                { name: '沐浴', class: 'bath', desc: '万物初生，形体柔脆，易受损' },
+                { name: '冠带', class: 'crown', desc: '万物渐荣秀，如人加冠' },
+                { name: '临官', class: 'official', desc: '万物既秀实，如人之仕途' },
+                { name: '帝旺', class: 'prosperity', desc: '万物成熟，如人之兴旺' },
+                { name: '衰', class: 'decline', desc: '万物形衰，如人之气衰' },
+                { name: '病', class: 'illness', desc: '万物病，如人之患病' },
+                { name: '死', class: 'death', desc: '万物死，如人之死' },
+                { name: '墓', class: 'tomb', desc: '万物归墓，如人之终而归墓' },
+                { name: '绝', class: 'absolute', desc: '万物绝地，气已绝' },
+                { name: '胎', class: 'fetus', desc: '天地气交，氤氲造物，如人之受胎' },
+                { name: '养', class: 'nurture', desc: '万物在地中成形，如人之孕育' }
+            ];
+            
+            // 创建长生宫卡片
+            longevityInfo.forEach((info, index) => {
+                const card = document.createElement('div');
+                card.className = `longevity-card ${info.class}`;
+                card.dataset.index = index;
+                
+                // 查找对应的地支
+                const dizhi = longevityData[index] || '无';
+                
+                card.innerHTML = `
+                    <div class="longevity-name">${info.name}</div>
+                    <div class="longevity-dizhi">${dizhi}</div>
+                    <div class="longevity-description">${info.desc}</div>
+                `;
+                
+                // 添加点击事件显示详情
+                card.addEventListener('click', function() {
+                    showLongevityDetail(info.name, info.desc, dizhi, index, bazi);
+                });
+                
+                longevityGrid.appendChild(card);
+            });
+        }
+        
+        // 计算十二长生宫
+        function calculateLongevity(dayStem) {
+            // 十二长生规律表
+            // 甲木长生在亥，顺时针排列
+            // 乙木长生在午，逆时针排列
+            const longevityRules = {
+                '甲': ['亥', '子', '丑', '寅', '卯', '辰', '巳', '午', '未', '申', '酉', '戌'], // 阳干顺行
+                '乙': ['午', '巳', '辰', '卯', '寅', '丑', '子', '亥', '戌', '酉', '申', '未'], // 阴干逆行
+                '丙': ['寅', '卯', '辰', '巳', '午', '未', '申', '酉', '戌', '亥', '子', '丑'], // 阳干顺行
+                '丁': ['酉', '申', '未', '午', '巳', '辰', '卯', '寅', '丑', '子', '亥', '戌'], // 阴干逆行
+                '戊': ['寅', '卯', '辰', '巳', '午', '未', '申', '酉', '戌', '亥', '子', '丑'], // 同丙火
+                '己': ['酉', '申', '未', '午', '巳', '辰', '卯', '寅', '丑', '子', '亥', '戌'], // 同丁火
+                '庚': ['巳', '午', '未', '申', '酉', '戌', '亥', '子', '丑', '寅', '卯', '辰'], // 阳干顺行
+                '辛': ['子', '亥', '戌', '酉', '申', '未', '午', '巳', '辰', '卯', '寅', '丑'], // 阴干逆行
+                '壬': ['申', '酉', '戌', '亥', '子', '丑', '寅', '卯', '辰', '巳', '午', '未'], // 阳干顺行
+                '癸': ['卯', '寅', '丑', '子', '亥', '戌', '酉', '申', '未', '午', '巳', '辰']  // 阴干逆行
+            };
+            
+            return longevityRules[dayStem] || longevityRules['甲']; // 默认返回甲木的长生规律
+        }
+        
+        // 显示长生宫详情
+        function showLongevityDetail(name, desc, dizhi, index, bazi) {
+            const detailPanel = document.getElementById('longevityDetail');
+            const detailTitle = document.getElementById('detailTitle');
+            const detailContent = document.getElementById('detailContent');
+            
+            // 移除所有卡片的active类
+            document.querySelectorAll('.longevity-card').forEach(card => {
+                card.classList.remove('active');
+            });
+            
+            // 添加当前卡片的active类
+            document.querySelector(`.longevity-card[data-index="${index}"]`).classList.add('active');
+            
+            // 设置标题
+            detailTitle.textContent = `${name}宫详解`;
+            
+            // 检查八字中是否有此地支
+            const baziBranches = [
+                bazi.year.branch,
+                bazi.month.branch,
+                bazi.day.branch,
+                bazi.hour.branch
+            ];
+            
+            const hasDizhi = baziBranches.includes(dizhi);
+            const dizhiPosition = hasDizhi ? 
+                `出现在${getBaziPosition(dizhi, bazi)}` : 
+                '八字中无此地支';
+            
+            // 长生宫解释
+            const longevityExplanations = {
+                '长生': '万物发生向荣，如人之初生。主生长、发展、起始。临长生者，多主生长发展顺利，有开创力。',
+                '沐浴': '亦称"败地"，万物初生，形体柔脆，易受损。主桃花、破败、变化。临沐浴者，多主感情丰富，易有变化。',
+                '冠带': '万物渐荣秀，如人加冠。主成长、学习、名誉。临冠带着，多主好学上进，重名誉。',
+                '临官': '亦称"禄地"，万物既秀实，如人之仕途。主事业、官运、稳定。临临官者，多主事业稳定，有官职。',
+                '帝旺': '万物成熟，如人之兴旺。主极盛、顶点、力量。临帝旺者，多主精力充沛，事业达顶峰。',
+                '衰': '万物形衰，如人之气衰。主衰退、减弱、保守。临衰者，多主保守稳健，精力渐衰。',
+                '病': '万物病，如人之患病。主疾病、问题、不顺。临病者，多主体弱多病，运势不佳。',
+                '死': '万物死，如人之死。主静止、终结、无活力。临死者，多主缺乏活力，运势停滞。',
+                '墓': '亦称"库地"，万物归墓，如人之终而归墓。主收藏、积累、结束。临墓者，多主善于积累，性格内敛。',
+                '绝': '亦称"受气"，万物绝地，气已绝。主绝境、新生、转变。临绝者，多主绝处逢生，有转变之机。',
+                '胎': '天地气交，氤氲造物，如人之受胎。主孕育、计划、起始。临胎者，多主有计划性，善筹备。',
+                '养': '万物在地中成形，如人之孕育。主培养、休养、准备。临养者，多主善于休养，为下一步做准备。'
+            };
+            
+            // 生成详情内容
+            let contentHTML = `
+                <p><span class="highlight">${name}</span>：${desc}</p>
+                <p>${longevityExplanations[name] || ''}</p>
+                <p>日主<span class="highlight">${bazi.day.stem}</span>的${name}宫在<span class="highlight">${dizhi}</span>，${dizhiPosition}。</p>
+            `;
+            
+            // 添加具体影响
+            if (hasDizhi) {
+                const position = getBaziPosition(dizhi, bazi);
+                contentHTML += `<p>此${name}宫出现在<span class="good">${position}</span>，对命局有直接影响。</p>`;
+                
+                // 根据宫位添加具体分析
+                if (index <= 4) { // 长生到帝旺
+                    contentHTML += `<p>${name}宫为旺相之地，主<span class="good">吉庆、发展、顺利</span>。</p>`;
+                } else if (index <= 8) { // 衰到墓
+                    contentHTML += `<p>${name}宫为衰弱之地，需<span class="warning">注意健康、保守行事</span>。</p>`;
+                } else { // 绝到养
+                    contentHTML += `<p>${name}宫为转变之地，有<span class="highlight">变化、新生</span>之机。</p>`;
+                }
+            } else {
+                contentHTML += `<p>八字中无${name}宫地支，此宫位对命局影响较小。</p>`;
+            }
+            
+            // 添加《渊海子平》原文
+            const originalTexts = {
+                '长生': '《渊海子平》云："长生管取命长荣，时日重逢主性灵。"',
+                '帝旺': '《渊海子平》云："帝旺若然居吉地，禄贵飞来岂等闲。"',
+                '墓': '《渊海子平》云："墓库原来是葬神，一为正印细推论。"',
+                '死': '《渊海子平》云："死处不堪言，灾殃及少年。"'
+            };
+            
+            if (originalTexts[name]) {
+                contentHTML += `<p style="margin-top: 15px; font-style: italic; color: var(--accent-light);">${originalTexts[name]}</p>`;
+            }
+            
+            detailContent.innerHTML = contentHTML;
+            detailPanel.classList.add('active');
+        }
+        
+        // 获取地支在八字中的位置
+        function getBaziPosition(dizhi, bazi) {
+            const positions = ['年柱', '月柱', '日柱', '时柱'];
+            const branches = [bazi.year.branch, bazi.month.branch, bazi.day.branch, bazi.hour.branch];
+            
+            for (let i = 0; i < branches.length; i++) {
+                if (branches[i] === dizhi) {
+                    return positions[i];
+                }
+            }
+            return '无';
+        }
+        
+        // 更新大运排盘
+        function updateDayunTable(bazi, date) {
+            const dayunTable = document.getElementById('dayunTable');
+            const dayunData = generateDayunData(bazi, date);
+            
+            // 生成表格HTML
+            let tableHTML = `
+                <thead>
+                    <tr>
+                        <th>大运</th>
+                        <th>起运年龄</th>
+                        <th>干支</th>
+                        <th>长生宫</th>
+                        <th>运势分析</th>
+                    </tr>
+                </thead>
+                <tbody>
+            `;
+            
+            dayunData.forEach((yun, index) => {
+                // 确定长生宫位
+                const longevityPosition = getLongevityForDayun(yun.ganzhi[0], bazi.day.stem);
+                
+                tableHTML += `
+                    <tr>
+                        <td>${yun.period}</td>
+                        <td>${yun.startAge}岁</td>
+                        <td><span class="highlight">${yun.ganzhi}</span></td>
+                        <td><span class="longevity-badge" style="background-color: ${getLongevityColor(longevityPosition)}">${longevityPosition}</span></td>
+                        <td>${yun.analysis}</td>
+                    </tr>
+                `;
+            });
+            
+            tableHTML += '</tbody>';
+            dayunTable.innerHTML = tableHTML;
+        }
+        
+        // 生成大运数据
+        function generateDayunData(bazi, date) {
+            const year = date.getFullYear();
+            const month = date.getMonth() + 1;
+            const day = date.getDate();
+            const hour = date.getHours();
+            
+            // 简化起运计算
+            const startAge = currentGender === 'male' ? 
+                Math.floor((month * 30 + day) / 3) : 
+                Math.floor((month * 30 + day) / 3) + 1;
+            
+            // 天干地支
+            const stems = ['甲', '乙', '丙', '丁', '戊', '己', '庚', '辛', '壬', '癸'];
+            const branches = ['子', '丑', '寅', '卯', '辰', '巳', '午', '未', '申', '酉', '戌', '亥'];
+            
+            // 月柱索引
+            const startStemIndex = stems.indexOf(bazi.month.stem);
+            const startBranchIndex = branches.indexOf(bazi.month.branch);
+            
+            // 生成8步大运
+            const dayunData = [];
+            
+            for (let i = 0; i < 8; i++) {
+                // 阳男阴女顺排，阴男阳女逆排
+                const isYangMale = (stems.indexOf(bazi.year.stem) % 2 === 0) && (currentGender === 'male');
+                const isYinFemale = (stems.indexOf(bazi.year.stem) % 2 === 1) && (currentGender === 'female');
+                const direction = (isYangMale || isYinFemale) ? 1 : -1;
+                
+                const stemIndex = (startStemIndex + direction * i + 10) % 10;
+                const branchIndex = (startBranchIndex + direction * i + 12) % 12;
+                
+                const ganzhi = stems[stemIndex] + branches[branchIndex];
+                const startAgeYun = startAge + i * 10;
+                
+                // 运势分析
+                const analyses = [
+                    '初运根基，奠定人生基础',
+                    '渐入佳境，事业发展起步',
+                    '运势上升，机遇逐渐增多',
+                    '稳定发展，事业小有成就',
+                    '变动较多，需灵活应对变化',
+                    '运势平稳，宜稳扎稳打',
+                    '贵人相助，有新的发展机会',
+                    '晚年运势，总结收获时期'
+                ];
+                
+                dayunData.push({
+                    period: `第${i+1}步大运`,
+                    startAge: startAgeYun,
+                    ganzhi: ganzhi,
+                    analysis: analyses[i] || '运势变化，把握时机'
+                });
+            }
+            
+            return dayunData;
+        }
+        
+        // 获取大运天干的长生宫位
+        function getLongevityForDayun(dayunStem, rizhuStem) {
+            // 简化处理：根据大运天干与日主的关系判断
+            const stemRelations = {
+                '同': '临官', '生': '长生', '克': '病', '被克': '死', '被生': '帝旺'
+            };
+            
+            // 天干五行
+            const stemElements = {
+                '甲': '木', '乙': '木', '丙': '火', '丁': '火', '戊': '土', 
+                '己': '土', '庚': '金', '辛': '金', '壬': '水', '癸': '水'
+            };
+            
+            const dayunElement = stemElements[dayunStem];
+            const rizhuElement = stemElements[rizhuStem];
+            
+            if (dayunStem === rizhuStem) return stemRelations['同'];
+            if (dayunElement === rizhuElement) return '冠带'; // 同类不同阴阳
+            
+            // 五行生克关系
+            const elementCycle = {
+                '木': {'生': '火', '克': '土', '被生': '水', '被克': '金'},
+                '火': {'生': '土', '克': '金', '被生': '木', '被克': '水'},
+                '土': {'生': '金', '克': '水', '被生': '火', '被克': '木'},
+                '金': {'生': '水', '克': '木', '被生': '土', '被克': '火'},
+                '水': {'生': '木', '克': '火', '被生': '金', '被克': '土'}
+            };
+            
+            const rizhuCycle = elementCycle[rizhuElement];
+            
+            if (dayunElement === rizhuCycle['被生']) return stemRelations['生'];
+            if (dayunElement === rizhuCycle['生']) return stemRelations['被生'];
+            if (dayunElement === rizhuCycle['克']) return stemRelations['被克'];
+            if (dayunElement === rizhuCycle['被克']) return stemRelations['克'];
+            
+            return '养'; // 默认
+        }
+        
+        // 获取长生宫颜色
+        function getLongevityColor(longevityName) {
+            const colorMap = {
+                '长生': 'rgba(15, 76, 117, 0.7)',
+                '沐浴': 'rgba(50, 130, 184, 0.7)',
+                '冠带': 'rgba(255, 215, 0, 0.7)',
+                '临官': 'rgba(76, 175, 80, 0.7)',
+                '帝旺': 'rgba(255, 87, 34, 0.7)',
+                '衰': 'rgba(121, 85, 72, 0.7)',
+                '病': 'rgba(96, 125, 139, 0.7)',
+                '死': 'rgba(33, 150, 243, 0.7)',
+                '墓': 'rgba(255, 0, 0, 0.7)',
+                '绝': 'rgba(255, 0, 0, 0.5)',
+                '胎': 'rgba(255, 182, 193, 0.7)',
+                '养': 'rgba(186, 85, 211, 0.7)'
+            };
+            
+            return colorMap[longevityName] || 'rgba(255, 255, 255, 0.2)';
+        }
+        
+        // 生成命理建议
+        function generateAdvice(bazi) {
+            const adviceContent = document.getElementById('adviceContent');
+            const dayStem = bazi.day.stem;
+            const dayElement = bazi.day.element;
+            
+            // 根据日干五行给出建议
+            const adviceMap = {
+                '木': {
+                    title: '木命之人的发展建议',
+                    content: `
+                        <p>木主仁，象征生长、发展。木命之人宜：</p>
+                        <ul style="margin-left: 20px; margin-top: 10px;">
+                            <li><span class="good">东方发展</span>：木旺于东方，往东发展有利</li>
+                            <li><span class="good">绿色相关</span>：多接触绿色环境，穿戴绿色衣物</li>
+                            <li><span class="good">春季行事</span>：春季木旺，重大事项宜安排在春季</li>
+                            <li><span class="warning">避金过旺</span>：金克木，需避免金属性过强的环境</li>
+                        </ul>
+                    `
+                },
+                '火': {
+                    title: '火命之人的发展建议',
+                    content: `
+                        <p>火主礼，象征热情、光明。火命之人宜：</p>
+                        <ul style="margin-left: 20px; margin-top: 10px;">
+                            <li><span class="good">南方发展</span>：火旺于南方，往南发展有利</li>
+                            <li><span class="good">红色相关</span>：多接触红色，穿戴红色衣物</li>
+                            <li><span class="good">夏季行事</span>：夏季火旺，重大事项宜安排在夏季</li>
+                            <li><span class="warning">避水过旺</span>：水克火，需避免水性过强的环境</li>
+                        </ul>
+                    `
+                },
+                '土': {
+                    title: '土命之人的发展建议',
+                    content: `
+                        <p>土主信，象征稳定、包容。土命之人宜：</p>
+                        <ul style="margin-left: 20px; margin-top: 10px;">
+                            <li><span class="good">中部发展</span>：土旺于中部，在中部发展有利</li>
+                            <li><span class="good">黄色相关</span>：多接触黄色，穿戴黄色衣物</li>
+                            <li><span class="good">季末行事</span>：每季最后一个月土旺，宜安排重要事项</li>
+                            <li><span class="warning">避木过旺</span>：木克土，需避免木属性过强的环境</li>
+                        </ul>
+                    `
+                },
+                '金': {
+                    title: '金命之人的发展建议',
+                    content: `
+                        <p>金主义，象征刚强、决断。金命之人宜：</p>
+                        <ul style="margin-left: 20px; margin-top: 10px;">
+                            <li><span class="good">西方发展</span>：金旺于西方，往西发展有利</li>
+                            <li><span class="good">白色相关</span>：多接触白色，穿戴白色衣物</li>
+                            <li><span class="good">秋季行事</span>：秋季金旺，重大事项宜安排在秋季</li>
+                            <li><span class="warning">避火过旺</span>：火克金，需避免火属性过强的环境</li>
+                        </ul>
+                    `
+                },
+                '水': {
+                    title: '水命之人的发展建议',
+                    content: `
+                        <p>水主智，象征智慧、流动。水命之人宜：</p>
+                        <ul style="margin-left: 20px; margin-top: 10px;">
+                            <li><span class="good">北方发展</span>：水旺于北方，往北发展有利</li>
+                            <li><span class="good">黑色相关</span>：多接触黑色，穿戴黑色衣物</li>
+                            <li><span class="good">冬季行事</span>：冬季水旺，重大事项宜安排在冬季</li>
+                            <li><span class="warning">避土过旺</span>：土克水，需避免土属性过强的环境</li>
+                        </ul>
+                    `
+                }
+            };
+            
+            const advice = adviceMap[dayElement] || adviceMap['木'];
+            
+            adviceContent.innerHTML = `
+                <h4 style="color: var(--gold-color); margin-bottom: 15px;">${advice.title}</h4>
+                ${advice.content}
+                <p style="margin-top: 20px; font-style: italic; color: var(--accent-light);">
+                    《渊海子平》曰："命运虽定，人事可转。知命者不怨天，知己者不尤人。"
+                </p>
+            `;
+        }
+    </script>
+</body>
+</html>
